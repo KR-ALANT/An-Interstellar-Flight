@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playermove : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float maxSpeed; //입력
     public float jumpPower; //입력
@@ -20,12 +20,6 @@ public class Playermove : MonoBehaviour
         //Jump
         if (Input.GetButtonDown("Jump")){
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-        }
-
-        //Stop Speed
-        if (Input.GetButtonUp("Horizontal"))
-        {
-            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
         }
 
         //Move
